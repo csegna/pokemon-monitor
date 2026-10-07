@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/*
+  Design tokens, carried over from the CorSe concept mockup. Defined as
+  plain CSS custom properties (not hardcoded into components) so the
+  light/dark overrides below are the only place theme values live.
+*/
+:root {
+  --bg: #f4f5f8;
+  --surface: #ffffff;
+  --surface-2: #ecedf3;
+  --surface-3: #e2e5ec;
+  --border: #dce0e8;
+  --text-primary: #12141a;
+  --text-secondary: #565f72;
+  --text-muted: #8890a0;
+  --accent: #4c56e8;
+  --accent-ink: #ffffff;
+  --accent-shimmer: #e0398d;
+  --good: #178a52;
+  --good-bg: #e4f5ec;
+  --warning: #a66a0e;
+  --warning-bg: #fbf0dd;
+  --critical: #d6414d;
+  --critical-bg: #fce7e8;
+  --grid-line: #e7e9ef;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1016;
+    --surface: #151920;
+    --surface-2: #1b2029;
+    --surface-3: #222836;
+    --border: #262c38;
+    --text-primary: #edeff3;
+    --text-secondary: #97a1b4;
+    --text-muted: #5f6879;
+    --accent: #7e8aff;
+    --accent-ink: #0d1016;
+    --accent-shimmer: #ff4fa3;
+    --good: #33c078;
+    --good-bg: rgba(51, 192, 120, 0.14);
+    --warning: #e5a736;
+    --warning-bg: rgba(229, 167, 54, 0.14);
+    --critical: #eb5757;
+    --critical-bg: rgba(235, 87, 87, 0.14);
+    --grid-line: #1e2330;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1016;
+  --surface: #151920;
+  --surface-2: #1b2029;
+  --surface-3: #222836;
+  --border: #262c38;
+  --text-primary: #edeff3;
+  --text-secondary: #97a1b4;
+  --text-muted: #5f6879;
+  --accent: #7e8aff;
+  --accent-ink: #0d1016;
+  --accent-shimmer: #ff4fa3;
+  --good: #33c078;
+  --good-bg: rgba(51, 192, 120, 0.14);
+  --warning: #e5a736;
+  --warning-bg: rgba(229, 167, 54, 0.14);
+  --critical: #eb5757;
+  --critical-bg: rgba(235, 87, 87, 0.14);
+  --grid-line: #1e2330;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f4f5f8;
+  --surface: #ffffff;
+  --surface-2: #ecedf3;
+  --surface-3: #e2e5ec;
+  --border: #dce0e8;
+  --text-primary: #12141a;
+  --text-secondary: #565f72;
+  --text-muted: #8890a0;
+  --accent: #4c56e8;
+  --accent-ink: #ffffff;
+  --accent-shimmer: #e0398d;
+  --good: #178a52;
+  --good-bg: #e4f5ec;
+  --warning: #a66a0e;
+  --warning-bg: #fbf0dd;
+  --critical: #d6414d;
+  --critical-bg: #fce7e8;
+  --grid-line: #e7e9ef;
+  color-scheme: light;
+}
+
+/* Wires the tokens above into Tailwind utilities: bg-surface, text-accent,
+   border-border, etc. Tailwind v4's CSS-first config - no tailwind.config.ts. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-shimmer: var(--accent-shimmer);
+  --color-good: var(--good);
+  --color-good-bg: var(--good-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-critical: var(--critical);
+  --color-critical-bg: var(--critical-bg);
+  --color-grid-line: var(--grid-line);
+
+  --font-display: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+}

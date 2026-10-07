@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+holo.db
+.env
+# Real browser profiles (cookies, login sessions) - never commit these.
+browser_profiles/

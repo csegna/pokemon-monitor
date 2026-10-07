@@ -1,0 +1,26 @@
+{
+  "check_interval_seconds": 45,
+
+  "discord_webhook_url": "https://discord.com/api/webhooks/REPLACE/WITH_YOUR_WEBHOOK",
+
+  "in_stock_phrases": [
+    "add to cart",
+    "add to bag",
+    "add to basket",
+    "buy now"
+  ],
+
+  "out_of_stock_phrases": [
+    "out of stock",
+    "sold out",
+    "unavailable",
+    "currently unavailable",
+    "notify me"
+  ],
+
+  "auto_checkout": {
+    "enabled": false,
+    "headless": false,
+    "browser_profile_dir": "browser_profile"
+  }
+}

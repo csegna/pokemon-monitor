@@ -1,0 +1,11 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+sqlmodel>=0.0.16
+httpx>=0.27.0
+beautifulsoup4>=4.12.0
+python-dotenv>=1.0.0
+
+# Market price tracking renders pricing pages like a real browser would
+# (they're client-side rendered - a plain HTTP fetch sees no price at
+# all). After installing, run: playwright install chromium
+playwright>=1.40.0

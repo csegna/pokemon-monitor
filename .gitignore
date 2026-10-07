@@ -1,0 +1,23 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Runtime state from tracker.py
+status.json
+browser_profile/
+browser_profiles/
+
+# Secrets
+.env
+.env.local
+
+# Frontend build output / deps
+node_modules/
+.next/
