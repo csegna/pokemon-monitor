@@ -4,6 +4,8 @@ A beginner-friendly Python tool that watches public Pokemon product pages
 (Target, Best Buy, Walmart, etc.) and tells you the moment one comes back
 in stock - with an optional helper to speed up the boring part of checkout.
 
+Pokémon Monitor is a personal project currently running in a local development environment. The application includes a working interface and product monitoring functionality, although some monitoring features are still being refined for accuracy and reliability. I’m continuing to troubleshoot errors and improve the application’s performance.
+
 ## What this tool does
 
 - Reads a list of product page URLs from `products.json`.
